@@ -38,7 +38,7 @@ app.get('/api/movie/:id', async (req ,res)=>{
 })
 
 app.put('/api/movie/:id', async (req,res)=>{
-  let movie = movieModel.findByIdAndUpdate(req.params.id, req.body, {new:true});
+  let movie = await movieModel.findByIdAndUpdate(req.params.id, req.body, {new:true});
   res.send(movie);
 })
 
