@@ -14,8 +14,12 @@ const MovieItem = (props)=> {
     e.preventDefault();
 
     axios.delete('http://localhost:4000/api/movie/' + props.mymovie._id)
-    .then()
-    .catch();
+    .then((res)=>{
+      props.Reload();
+    })
+    .catch((err) =>{
+      console.log(err)
+    });
   }
   return (
     <div>
